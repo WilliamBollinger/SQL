@@ -1,0 +1,35 @@
+This file shows the first time I was challenge with generating my own table data, and then running queries on it.
+
+/* Create table about the people and what they do here */
+CREATE TABLE celebrities (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    job TEXT);
+    
+INSERT INTO celebrities (fullname, age, job) VALUES ("Taylor Swift","30","Singer");
+INSERT INTO celebrities (fullname, age, job) VALUES ("Travis Kelce", "34", "Athlete");
+INSERT INTO celebrities (fullname, job) VALUES ("Sarah J Maas", "Author");
+
+
+CREATE TABLE hobbies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    hobby TEXT,
+    experience_level INTEGER);
+    
+INSERT INTO hobbies (hobby, experience_level) VALUES ("Rock Climbing","Expert");
+INSERT INTO hobbies (hobby, experience_level) VALUES ("Rowing","Intermediate");
+INSERT INTO hobbies (hobby, experience_level) VALUES ("Fishing","Beginner");
+
+
+
+SELECT *
+FROM celebrities;
+
+SELECT*
+FROM hobbies;
+
+SELECT *
+FROM celebrities
+JOIN hobbies
+ON celebrities.id=hobbies.id
